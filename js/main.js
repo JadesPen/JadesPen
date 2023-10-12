@@ -449,3 +449,19 @@ document.addEventListener("DOMContentLoaded", function(){
 function newsletter() {
   alert("You have subscribed to our newletter");
 };
+
+//Clear newsletter content
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.querySelector("form");
+
+  contactForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Clear input fields
+      const inputFields = contactForm.querySelectorAll("input");
+      inputFields.forEach((input) => {
+          input.value = "";
+      });
+  });
+});
